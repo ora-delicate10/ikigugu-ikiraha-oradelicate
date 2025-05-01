@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../models/food_item.dart';
 import '../models/shop.dart';
+import '../models/cart_provider.dart'; // ✅ Don't forget this!
 import '../widgets/food_card.dart';
+import 'cart_screen.dart';
+
 
 
 class MenuScreen extends StatelessWidget {
@@ -27,6 +32,17 @@ class MenuScreen extends StatelessWidget {
         ),
         iconTheme: const IconThemeData(color: Colors.deepOrange),
         elevation: 1,
+        actions: [
+  IconButton(
+    icon: const Icon(Icons.shopping_cart, color: Colors.deepOrange),
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const CartScreen()),
+      );
+    },
+  )
+],
       ),
       body: ListView.builder(
         itemCount: foodList.length,
@@ -34,10 +50,13 @@ class MenuScreen extends StatelessWidget {
           return FoodCard(
             item: foodList[index],
             onAdd: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("${foodList[index].name} added to cart")),
-              );
-            },
+  Provider.of<CartProvider>(context, listen: false).addToCart(foodList[index]);
+
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('${foodList[index].name} added to cart')),
+  );
+},
+
           );
         },
       ),
