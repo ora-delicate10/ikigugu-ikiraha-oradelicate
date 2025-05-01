@@ -1,16 +1,42 @@
-# ikiraha
+# 🍔 Ikiraha – Smart Food Ordering App
 
-A new Flutter project.
+**Ikiraha** is a mobile food ordering application built using **Flutter** for the **Ikigugu Group Ltd Industrial Attachment Program**.  
+It allows users to browse shops, view food menus, and simulate ordering — all with a clean, modern user interface.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 Screens
 
-A few resources to get you started if this is your first Flutter project:
+- 🏪 **Shops Screen** – View list of food shops
+- 🍽️ **Menu Screen** – View available food items per shop
+- 🛒 **Cart (Coming Soon)** – Add/remove items and view order total
+- ✅ **Checkout (Coming Soon)** – Simulated order process
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Technologies Used
+
+| Tool         | Purpose                |
+|--------------|------------------------|
+| **Flutter**  | Frontend Mobile App UI |
+| **Dart**     | App Logic Language     |
+| **VS Code**  | Code Editor            |
+| **GitHub**   | Version Control        |
+| **Figma / draw.io** | UI Design / Diagrams |
+
+---
+
+## 🧱 Folder Structure
+lib/ ├── main.dart ├── models/ │ ├── food_item.dart │ └── shop.dart ├── screens/ │ ├── shops_screen.dart │ └── menu_screen.dart ├── widgets/ │ ├── shop_card.dart │ └── food_card.dart assets/ └── logo.png, food images
+
+---
+
+## 🛠️ How to Run
+
+1. Install Flutter: [flutter.dev/docs/get-started](https://flutter.dev/docs/get-started)
+2. Clone the project:
+   ```bash
+   git clone https://github.com/ora-delicate10/ikigugu-ikiraha-oradelicate.git
+cd ikiraha
+flutter pub get
+flutter run
